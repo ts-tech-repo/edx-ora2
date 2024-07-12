@@ -2,7 +2,7 @@
 {% spaceless %}
 
     <div class="wrapper--staff-assessment">
-        <div class="step__instruction">
+        <div class="step__instruction" style="display: none;">
             {% if not is_team_assignment %}
                 <p>{% trans "Override this learner's current grade using the problem's rubric." %}</p>
             {% else %}
