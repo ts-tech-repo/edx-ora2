@@ -145,8 +145,10 @@ class StaffAreaMixin:
                 context['is_enhanced_staff_grader_enabled'] = False
             else:
                 context['is_enhanced_staff_grader_enabled'] = self.is_enhanced_staff_grader_enabled
+            mfe_config = configuration_helpers.get_value('MFE_CONFIG', {})
+            base_url = mfe_config.get('ORA_GRADING_MICROFRONTEND_URL',default=getattr(settings, 'ORA_GRADING_MICROFRONTEND_URL', ''))
             context['enhanced_staff_grader_url'] = '{esg_url}/{block_id}'.format(
-                esg_url=getattr(settings, 'ORA_GRADING_MICROFRONTEND_URL', ''),
+                esg_url=base_url,
                 block_id=str(self.get_xblock_id())
             )
 
