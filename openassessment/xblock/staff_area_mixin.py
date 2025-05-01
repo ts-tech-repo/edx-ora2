@@ -16,6 +16,8 @@ from openassessment.fileupload.api import delete_shared_files_for_team, remove_f
 from openassessment.workflow.errors import AssessmentWorkflowError, AssessmentWorkflowInternalError
 from openassessment.xblock.utils.data_conversion import create_submission_dict
 from openassessment.xblock.utils.resolve_dates import DISTANT_FUTURE, DISTANT_PAST
+from openedx.core.djangoapps.site_configuration.models import SiteConfiguration
+from openedx.core.djangoapps.site_configuration import helpers as configuration_helpers
 
 from .utils.user_data import get_user_preferences
 
